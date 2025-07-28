@@ -29,14 +29,62 @@
             <label for="facultad">Facultad</label>
             <select id="facultad" v-model="form.facultad" required>
               <option disabled value="">Seleccione una facultad...</option>
-              <optgroup label="Salud y Ciencias Médicas">
-                <option>Ciencias Médicas</option><option>Odontología</option><option>Enfermería</option>
+              <optgroup label="Facultad de Ciencias de la Educación">
+                <option>Educación Inicial</option>
+                <option>Educación Especial</option>
+                <option>Psicología Educativa</option>
+                <option>Educación Básica</option>
               </optgroup>
-              <optgroup label="Educación, Comunicación y Derecho">
-                <option>Ciencias de la Educación</option><option>Comunicación</option><option>Jurisprudencia</option><option>Trabajo Social</option>
+              <optgroup label="Facultad de Ciencias Administrativas">
+                <option>Administración de Empresas</option>
+                <option>Mercadotecnia</option>
+                <option>Contabilidad y Auditoría</option>
+                <option>Auditoría y Control de Gestión</option>
+                <option>Finanzas</option>
+                <option>Comercio Exterior</option>
+                <option>Gestión de la Información Gerencial</option>
+                <option>Gestión del Talento Humano</option>
               </optgroup>
-              <optgroup label="Administración y Economía">
-                <option>Ciencias Administrativas</option><option>Ciencias Económicas</option><option>Contabilidad</option><option>Gestión Organizacional</option>
+              <optgroup label="Facultad de Odontología">
+                <option>Odontología</option>
+              </optgroup>
+              <optgroup label="Facultad de Ciencias Médicas">
+                <option>Medicina</option>
+                <option>Enfermería</option>
+                <option>Fisioterapia</option>
+                <option>Fonoaudiología</option>
+                <option>Laboratorio Clínico</option>
+                <option>Terapia Ocupacional</option>
+                <option>Psicología</option>
+              </optgroup>
+              <optgroup label="Facultad de Jurisprudencia">
+                <option>Derecho</option>
+                <option>Criminología y Ciencias Forenses</option>
+              </optgroup>
+              <optgroup label="Facultad de Arquitectura">
+                <option>Arquitectura</option>
+              </optgroup>
+              <optgroup label="Facultad de Ingeniería">
+                <option>Ingeniería Civil</option>
+                <option>Ingeniería Marítima</option>
+                <option>Electricidad</option>
+                <option>Ingeniería Industrial</option>
+                <option>Ingeniería de Alimentos</option>
+              </optgroup>
+              <optgroup label="Facultad de Ciencias de la Vida y Tecnologías">
+                <option>Ingeniería Agropecuaria</option>
+                <option>Agronegocios</option>
+                <option>Ingeniería Agroindustrial</option>
+                <option>Ingeniería Ambiental</option>
+                <option>Ingeniería en Tecnologías de la Información</option>
+                <option>Ingeniería en Software</option>
+                <option>Ingeniería en Sistemas</option>
+                <option>Biología</option>
+              </optgroup>
+              <optgroup label="Facultad de Ciencias Sociales">
+                <option>Economía</option>
+                <option>Trabajo Social</option>
+                <option>Comunicación</option>
               </optgroup>
             </select>
           </div>
