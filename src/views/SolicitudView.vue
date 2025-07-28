@@ -112,7 +112,7 @@ export default {
             certificados: null
         }
       },
-      // Objeto separado para guardar solo los nombres para la UI
+
       fileNames: {
           cv: '',
           titulo: '',
@@ -128,7 +128,7 @@ export default {
   },
   methods: {
     validate() {
-      // Lógica de validación (sin cambios)
+
       this.errors = {};
       if (!this.form.tipoTramite) this.errors.tipoTramite = 'Debe seleccionar un tipo de proceso.';
       if (!this.form.fechaNombramiento) this.errors.fechaNombramiento = 'Debe seleccionar una fecha.';
@@ -150,7 +150,7 @@ export default {
       if (file.type === 'application/pdf') {
         const reader = new FileReader();
         reader.onload = (e) => {
-          // **CORRECCIÓN CLAVE:** Guardamos el contenido completo del archivo en Base64
+   
           this.form.documentos[docType] = e.target.result; 
           this.fileNames[docType] = file.name;
           if (this.errors[docType]) delete this.errors[docType];
@@ -166,7 +166,7 @@ export default {
       if (!this.validate()) return;
       this.isSubmitting = true;
 
-      // Usamos una promesa para asegurar que todos los archivos se lean antes de guardar
+
       const usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
       const nuevaSolicitud = {
         id: Date.now(),
@@ -175,7 +175,7 @@ export default {
         estado: "Pendiente",
         fecha: new Date().toLocaleDateString(),
         detalles: {
-            // Guardamos todo el formulario, que ya incluye los Base64 de los documentos
+       
             ...this.form, 
         }
       };
@@ -193,7 +193,7 @@ export default {
 </script>
 
 <style scoped>
-/* Tus estilos no necesitan cambios */
+
 .solicitud-container { display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; background-color: #f4f6f9; font-family: 'Segoe UI', sans-serif; padding: 40px 20px; }
 .solicitud-box { background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); width: 100%; max-width: 800px; }
 .header-section { text-align: center; margin-bottom: 30px; user-select: none; }

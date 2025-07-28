@@ -86,13 +86,13 @@ export default {
     };
   },
   methods: {
-    // ... (tus otros métodos: logout, navigate, toggles...)
+
     logout() { localStorage.removeItem('usuarioActivo'); this.$router.push('/'); },
     navigate(path) { this.$router.push(path); },
     toggleNotifications() { this.showNotifications = !this.showNotifications; this.showProfileMenu = false; if (this.showNotifications) this.unreadNotificationsCount = 0; },
     toggleProfileMenu() { this.showProfileMenu = !this.showProfileMenu; this.showNotifications = false; },
     
-    // CORRECCIÓN: Nuevo método para abrir el PDF
+
     openTitlePdf() {
       if (this.user && this.user.tituloPDF) {
         const pdfWindow = window.open("");
@@ -136,7 +136,7 @@ export default {
 </script>
 
 <style scoped>
-/* El CSS no necesita cambios */
+
 .loading-overlay { display: flex; align-items: center; justify-content: center; height: 100vh; font-size: 1.5rem; color: #555; }
 .panel-container { background-color: #f8f9fa; min-height: 100vh; }
 .panel-header { background-color: #ffffff; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }

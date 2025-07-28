@@ -180,7 +180,7 @@ export default {
 </script>
 
 <style scoped>
-/* Estilos completos y correctos */
+
 .registro-container {
   display: flex;
   align-items: center;

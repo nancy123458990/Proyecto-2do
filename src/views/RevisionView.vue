@@ -167,7 +167,7 @@ export default {
       localStorage.removeItem('usuarioActivo');
       this.$router.push('/');
     },
-    // Añade el método openPdf aquí, idéntico al de HistorialView
+
     openPdf(pdfUrl) {
       if (pdfUrl) {
         const pdfWindow = window.open("");
@@ -190,7 +190,7 @@ export default {
 </script>
 
 <style scoped>
-/* ESTILOS COMPLETOS Y CORREGIDOS - NO SE NECESITAN CAMBIOS AQUÍ */
+
 .admin-container { background-color: #f8f9fa; min-height: 100vh; font-family: 'Segoe UI', sans-serif; }
 .panel-header { background-color: #ffffff; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
 .header-title { display: flex; align-items: center; }

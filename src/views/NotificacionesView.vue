@@ -27,7 +27,7 @@ export default {
   name: "NotificacionesView",
   data() {
     return {
-      // Usamos los datos de ejemplo de tu archivo JS original
+
       notificaciones: [
         {
           tipo: "Aprobación",

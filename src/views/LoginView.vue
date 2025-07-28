@@ -26,7 +26,7 @@
 
       <div class="links-section">
         <router-link to="/recuperar-clave">¿Olvidaste tu contraseña?</router-link>
-        <router-link to="/registro">Crear una cuenta de docente</router-link>
+        <router-link to="/registro">Crear una cuenta</router-link>
       </div>
 
     </div>
@@ -51,9 +51,7 @@ export default {
       this.isLoading = true;
       this.error = null;
       setTimeout(() => {
-        // --- LÓGICA DE ROLES MEJORADA ---
-
-        // 1. VERIFICAR SI ES ADMINISTRADOR
+     
         const adminCredentials = {
             email: 'Admin@Soporte.com',
             password: 'Admin12345'
@@ -67,12 +65,11 @@ export default {
           };
           localStorage.setItem('usuarioActivo', JSON.stringify(adminUser));
 
-          // Redirige al panel de revisión de solicitudes
           this.$router.push('/revision');
           return;
         }
 
-        // 2. SI NO ES ADMIN, BUSCAR COMO DOCENTE
+
         const usuarios = JSON.parse(localStorage.getItem('usuarios_db')) || [];
         const usuarioEncontrado = usuarios.find(
           user => user.correo.toLowerCase() === this.form.email.toLowerCase() && user.clave === this.form.password
@@ -81,7 +78,7 @@ export default {
         if (usuarioEncontrado) {
           localStorage.setItem('usuarioActivo', JSON.stringify(usuarioEncontrado));
 
-          // Redirige al panel normal de docente
+
           this.$router.push('/panel');
         } else {
           this.error = 'Las credenciales proporcionadas son incorrectas.';
@@ -96,7 +93,7 @@ export default {
 </script>
 
 <style scoped>
-/* Tus estilos van aquí */
+
 .login-container {
   display: flex;
   align-items: center;

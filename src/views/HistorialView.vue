@@ -69,7 +69,7 @@ export default {
   data() {
     return {
       solicitudes: [],
-      activeId: null // Guardará el ID de la solicitud que está abierta/expandida
+      activeId: null 
     };
   },
   methods: {
@@ -79,7 +79,7 @@ export default {
       if (usuarioActivo) {
         this.solicitudes = todasLasSolicitudes
           .filter(s => s.docente_email === usuarioActivo.correo)
-          .sort((a, b) => new Date(b.id) - new Date(a.id)); // Ordena por más reciente
+          .sort((a, b) => new Date(b.id) - new Date(a.id)); 
       }
     },
     getStatusClass(estado) {
@@ -88,18 +88,17 @@ export default {
       return 'status-pendiente';
     },
     toggleDetalle(id) {
-      // Si el ID clicado ya está activo, lo cerramos (poniendo activeId a null)
-      // Si no, lo abrimos (poniendo activeId al id clicado)
+
       this.activeId = this.activeId === id ? null : id;
     },
-    // Método para abrir el PDF de forma instantánea
+
     openPdf(pdfUrl) {
       if (pdfUrl) {
-        // Usa window.open y document.write para un control más directo
+  
         const pdfWindow = window.open("");
-        if (pdfWindow) { // Asegúrate de que la ventana se abrió (no bloqueada por pop-ups)
+        if (pdfWindow) { 
             pdfWindow.document.write("<iframe width='100%' height='100%' src='" + pdfUrl + "' style='border:none;'></iframe>");
-            pdfWindow.document.close(); // Importante para finalizar la escritura
+            pdfWindow.document.close(); 
         } else {
             alert('El navegador bloqueó la apertura de la ventana emergente. Por favor, permítelas para ver el PDF.');
         }
@@ -115,7 +114,7 @@ export default {
 </script>
 
 <style scoped>
-/* Tu CSS existente no necesita cambios */
+
 .historial-container {
   display: flex;
   flex-direction: column;
@@ -178,11 +177,11 @@ export default {
 .solicitud-details li { margin-bottom: 10px; font-size: 14px; color: #555; }
 .solicitud-details li strong { margin-right: 5px; }
 .link-pdf {
-  color: #0d6efd; /* Color azul para enlaces, similar a Bootstrap */
+  color: #0d6efd; 
   text-decoration: none;
   font-weight: 500;
   cursor: pointer;
-  margin-left: 10px; /* Espacio entre el texto y el enlace */
+  margin-left: 10px;
 }
 .link-pdf:hover {
   text-decoration: underline;

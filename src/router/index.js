@@ -6,7 +6,7 @@ import SolicitudView from '../views/SolicitudView.vue'
 import HistorialView from '../views/HistorialView.vue'
 import RevisionView from '../views/RevisionView.vue'
 import NotificacionesView from '../views/NotificacionesView.vue'
-import RecuperarClaveView from '../views/RecuperarClaveView.vue' // <-- 1. Importa la nueva vista
+import RecuperarClaveView from '../views/RecuperarClaveView.vue'
 
 const routes = [
   {
@@ -19,7 +19,7 @@ const routes = [
     name: 'registro',
     component: RegistroView
   },
-  { // <-- 2. Añade la ruta para recuperar clave
+  { 
     path: '/recuperar-clave',
     name: 'recuperar-clave',
     component: RecuperarClaveView
@@ -61,7 +61,7 @@ const router = createRouter({
   routes
 })
 
-// Tu guardián de rutas (router.beforeEach) va aquí
+
 router.beforeEach((to, from, next) => {
   const usuarioActivo = JSON.parse(localStorage.getItem('usuarioActivo'));
   if (to.meta.requiresAuth) {
